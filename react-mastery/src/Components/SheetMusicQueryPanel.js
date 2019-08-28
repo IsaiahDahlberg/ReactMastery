@@ -1,17 +1,22 @@
 import React from 'react'
+import SheetMusicWidget from './SheetMusicWidget';
 
-const mapSheetMusic = (sm) =>{
-    return sm.map(s=> 
-        <div class="sheetMusicWidget">
-            <h3>{s.title}</h3>
-            <h5>{s.index}</h5>
-        </div>
-    )
+const renderStuffs = (arr) =>{
+    return arr.map( s => <SheetMusicWidget index={s.index} title={s.title} /> )
 }
 
-const SheetMusicQueryPanel = (sheetMusic) => (<div>
-    <h1>Sheet Music Query Panel</h1>
-    {mapSheetMusic(sheetMusic)}
-</div>)
+function SheetMusicQueryPanel (props) {
+
+    return (
+        <div> 
+            <h1>Sheet Music Query Panel</h1>
+            {
+                renderStuffs(props.sheetMusic)
+                }
+        </div>)
+
+}
 
 export default SheetMusicQueryPanel
+
+// 
