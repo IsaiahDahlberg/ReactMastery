@@ -1,10 +1,11 @@
 import React from "react"
+import "../Styles/SheetMusicWidget.css"
 
 function SheetMusicWidget (props) {
     return (
         <div className="sheetMusicWidget" key={props.index}>
-            <h3>{props.title}</h3>
-            <h5>{props.index}</h5>
+             <h5 className="index">{props.index}</h5>
+            <h3 className="title">{props.title}</h3> 
         </div>
     )
 }

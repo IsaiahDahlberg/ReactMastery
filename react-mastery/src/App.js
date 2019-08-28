@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="base">
       <header>
-        <h1>Sheet Music</h1>
+        <h1 className="webSiteHeader">Sheet Music</h1>
         <SheetMusicQueryPanel sheetMusic={mockSM} />
       </header>
     </div>

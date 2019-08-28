@@ -1,6 +1,6 @@
 import React from 'react'
 import SheetMusicWidget from './SheetMusicWidget';
-
+import '../Styles/SheetMusicQueryPanel.css'
 const renderStuffs = (arr) =>{
     return arr.map( s => <SheetMusicWidget index={s.index} title={s.title} /> )
 }
@@ -8,11 +8,10 @@ const renderStuffs = (arr) =>{
 function SheetMusicQueryPanel (props) {
 
     return (
-        <div> 
-            <h1>Sheet Music Query Panel</h1>
+        <div className="sheetMusicQueryPanel"> 
             {
                 renderStuffs(props.sheetMusic)
-                }
+            }
         </div>)
 
 }
