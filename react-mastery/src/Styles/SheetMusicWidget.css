@@ -7,7 +7,10 @@
     width: 250px;
     min-width: 150px;
     height: 100px;
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(252, 255, 255);
+}
+.sheetMusicWidget:hover{
+    background-color: rgb(244, 255, 255);
 }
 
 .title{
