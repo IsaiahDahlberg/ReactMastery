@@ -1,8 +1,8 @@
 import { ADD_WIDGET, TOGGLE_WIDGET } from "../actionTypes";
 
 const initialState = {
-    allIds: [],
-    byIds: {}
+    allIds: [ 1, 2, 3],
+    byIds: { 1: "title", 2: "2nd title", 3: "thirds title" }
 };
   
 export default function(state = initialState, action) {
@@ -28,7 +28,7 @@ switch (action.type) {
             ...state.byIds,
             [id]: {
                 ...state.byIds[id],
-                completed: !state.byIds[id].completed
+                focus: !state.byIds[id].focus
             }
             }
         };

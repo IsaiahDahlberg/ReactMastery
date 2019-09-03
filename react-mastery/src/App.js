@@ -1,5 +1,6 @@
 import React from 'react';
 import SheetMusicQueryPanel from "./Components/SheetMusicQueryPanel"
+import {  getsheetMusicList } from "./Redux/selectors";
 import './App.css';
 
 
@@ -7,8 +8,8 @@ const toggle = (index) =>{
   console.log("Hit: " + index)
 
 }
-
-function App() {
+ 
+const App = (sheetMusic) => {
   var mockSM = [
     {index: 1, title: "Fur Elise"},
     {index: 2, title: "Ashkon Farewell"},
@@ -27,6 +28,9 @@ function App() {
         <h1 className="webSiteHeader">Sheet Music</h1>
         <button>Add</button>
         <SheetMusicQueryPanel sheetMusic={mockSM} toggle={toggle} />
+        {
+           console.log( getsheetMusicList())
+        }
       </header>
     </div>
   )

@@ -13,6 +13,9 @@ function SheetMusicQueryPanel (props) {
             {
                props.sheetMusic.map( s => <SheetMusicWidget index={s.index} title={s.title} toggle={props.toggle} /> )
             }
+            {
+                
+            }
         </div>)
 
 }
