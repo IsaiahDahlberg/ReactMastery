@@ -1,0 +1,2 @@
+export const TOGGLE_WIDGET = "TOGGLE_WIDGET"
+export const ADD_WIDGET = "ADD_WIDGET"

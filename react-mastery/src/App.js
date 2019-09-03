@@ -3,6 +3,10 @@ import SheetMusicQueryPanel from "./Components/SheetMusicQueryPanel"
 import './App.css';
 
 
+const toggle = (index) =>{
+  console.log("Hit: " + index)
+
+}
 
 function App() {
   var mockSM = [
@@ -15,14 +19,14 @@ function App() {
     {index: 7, title: "Golden Anniversary"},
     {index: 8, title: "Blah"},
     {index: 9, title: "Blah blah"}
-  ]
+]
 
   return (
     <div className="base">
       <header>
         <h1 className="webSiteHeader">Sheet Music</h1>
         <button>Add</button>
-        <SheetMusicQueryPanel sheetMusic={mockSM} />
+        <SheetMusicQueryPanel sheetMusic={mockSM} toggle={toggle} />
       </header>
     </div>
   )
