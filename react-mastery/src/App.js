@@ -2,7 +2,6 @@ import React from 'react';
 import SheetMusicQueryPanel from "./Components/SheetMusicQueryPanel"
 import AddSheetMusicPopup from "./Components/AddSheetMusic/AddSheetMusicPopup"
 import './App.css';
-
 import { toggleAddPanel } from "./Redux/actions"
 
 function App() {
