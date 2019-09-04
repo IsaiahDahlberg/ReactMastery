@@ -23,3 +23,8 @@
     margin-right: 5px;
     float: right;
 }
+
+.delete{
+    background-color: lightcoral;
+    padding: 3px;
+}

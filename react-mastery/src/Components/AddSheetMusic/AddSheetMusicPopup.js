@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { getAddPanelToggleStatus } from "../../Redux/selectors"
-import { toggleAddPanel } from "../../Redux/actions"
+import { toggleAddPanel} from "../../Redux/actions"
 import AddSheetMusicForm from "./AddSheetMusicForm"
 import "../../Styles/AddSheetMusicPopup.css"
 
@@ -10,12 +10,11 @@ const AddSheetMusicPopup = ( { showAddPanel, toggleAddPanel } ) => {
         <div>
             
             { showAddPanel ?
-                    (<div className="AddSheetMusicPopup">
-                        <AddSheetMusicForm />
-                        <button onClick={()=>toggleAddPanel()}>Cancel</button>
-                    </div>) 
-                : 
-                <button onClick={()=>toggleAddPanel()}>Add</button>
+                        (<div className="AddSheetMusicPopup">
+                            <AddSheetMusicForm />
+                        </div>) 
+                        : 
+                        <button style={{position: 'absolute'}} onClick={()=>toggleAddPanel()}>Add</button>
             } 
         </div>   
      )    

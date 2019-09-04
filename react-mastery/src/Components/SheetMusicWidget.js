@@ -1,16 +1,15 @@
 import React from "react"
-import { connect } from "react-redux"
-import { deleteWidget } from "../Redux/actions";
 import "../Styles/SheetMusicWidget.css"
 
-const SheetMusicWidget = ( deleteWidget, props ) => {
+const SheetMusicWidget = ( props,  ) => {
+    const {id, title, deleteFunc} = props
     return (
         <div className="sheetMusicWidget">
-             <h5 className="index">{props.id}</h5>
-            <h3 className="title">{props.title}</h3> 
-            <button onClick={()=>deleteWidget(props.id)}>Delete</button>
+             <h5 className="index">{id}</h5>
+            <h3 className="title">{title}</h3> 
+            <button className="delete" onClick={()=>deleteFunc(id)}>Delete</button>
         </div>
     )
 }
 
-export default connect(null,{deleteWidget})(SheetMusicWidget)
+export default SheetMusicWidget

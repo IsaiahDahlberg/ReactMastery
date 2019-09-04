@@ -14,7 +14,6 @@ const initialState = {
 };
   
 export default function(state = initialState, action) {
-  console.log( action.type)
   switch (action.type) {
       case ADD_WIDGET: {
           const { id, title } = action.payload;
@@ -34,7 +33,7 @@ export default function(state = initialState, action) {
         const { id } = action.payload;
           return{
             ...state,
-              sheetMusic: [ ...state.sheetMusic.slice(0, id) , ...state.sheetMusic(id + 1) ]
+             sheetMusic: state.sheetMusic.filter((s)=>{return s.id !== id })             
           }
       }
       default:

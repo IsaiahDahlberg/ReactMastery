@@ -6,7 +6,6 @@ const initialState = {
   
 export default function(state = initialState, action) {
   const { type, name, value } = action;
-  console.log( type + ": " + name + ": " + value )
   switch (type) {
       case TOGGLE_ADD_PANEL: {
           return {
