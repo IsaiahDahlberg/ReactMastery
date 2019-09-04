@@ -1,20 +1,23 @@
-import React from 'react'
+import React from "react"
+import { connect } from "react-redux";
 import SheetMusicWidget from './SheetMusicWidget';
+import { getsheetMusicList } from '../Redux/selectors';
 import '../Styles/SheetMusicQueryPanel.css'
 
-const renderStuffs = (arr) =>{
-    return arr
-}
-
-function SheetMusicQueryPanel (props) {
-
-    return (
+const SheetMusicQueryPanel = ( {sheetMusic} ) => {
+    return(
         <div className="sheetMusicQueryPanel"> 
             {
-               props.sheetMusic.map( s => <SheetMusicWidget index={s.index} title={s.title} toggle={props.toggle} /> )
+               sheetMusic ? sheetMusic.map( s => <SheetMusicWidget index={s.index} title={s.title} key={s.index}/> ) 
+                          : "Nothing here to see"
             }
-        </div>)
-
+        </div>
+    )
 }
 
-export default SheetMusicQueryPanel
+const mapStateToProps = state =>{
+    const sheetMusic = getsheetMusicList(state)
+    return { sheetMusic }
+} 
+
+export default connect(mapStateToProps)(SheetMusicQueryPanel);

@@ -1,5 +1,6 @@
 .sheetMusicQueryPanel{
     width: 75%;
+    min-height: 500px;
     margin: auto;
     display: grid;
     justify-content: space-evenly;

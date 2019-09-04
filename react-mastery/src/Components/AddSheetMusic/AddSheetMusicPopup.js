@@ -1,11 +1,23 @@
 import React from "react"
-import "../Styles/AddSheetMusicPopup.css"
-function AddSheetMusicPopup (props) {
+import { connect } from "react-redux";
+import { getAddPanelToggleStatus } from "../../Redux/selectors";
+import "../../Styles/AddSheetMusicPopup.css"
+
+const AddSheetMusicPopup = ( { showAddPanel } ) => {
     return(
-        <div className="AddSheetMusicPopup">
-            <h1>AddSheetMusicPopup</h1>
-        </div>
-    )
+        <div>
+            { showAddPanel ?
+                (<div className="AddSheetMusicPopup">
+                     <h1>AddSheetMusicPopup</h1>
+                </div>) : "null"
+            } 
+        </div>   
+     )    
 }
 
-export default AddSheetMusicPopup.js
+const mapStateToProps = state =>{
+    const showAddPanel = getAddPanelToggleStatus(state)
+    return { showAddPanel }
+} 
+
+export default connect(mapStateToProps)(AddSheetMusicPopup)
