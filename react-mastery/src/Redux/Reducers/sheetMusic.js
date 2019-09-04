@@ -1,4 +1,4 @@
-import { ADD_WIDGET, TOGGLE_WIDGET } from "../actionTypes";
+import { ADD_WIDGET, TOGGLE_WIDGET, DELETE_WIDGET } from "../actionTypes";
 
 const initialState = {
     toggleWidget: null,
@@ -9,32 +9,33 @@ const initialState = {
                   {id: 4, title: "Riders of Rohan"},
                   {id: 5, title: "Golum's Theme"},
                   {id: 6, title: "Pomp and Circumstnace"},
-                  {id: 7, title: "Golden Anniversary"},
-                  {id: 8, title: "Blah"},
-                  {id: 9, title: "Blah blah"}
+                  {id: 7, title: "Golden Anniversary"}
                 ]
 };
   
 export default function(state = initialState, action) {
+  console.log( action.type)
   switch (action.type) {
       case ADD_WIDGET: {
           const { id, title } = action.payload;
           return {
             ...state,
-              sheetMusic: {
-                ...state.sheetMusic.push({
-                  id: id,
-                  title: title
-                }),        
-              }
+              sheetMusic: [ ...state.sheetMusic, { id: id, title: title}]
           };
         }
       case TOGGLE_WIDGET: {
-      const { id } = action.payload;
-          return {
-              ...state,
-                toggleWidget: id            
-          };
+        const { id } = action.payload;
+            return {
+                ...state,
+                  toggleWidget: id            
+            };
+        }
+      case DELETE_WIDGET: {
+        const { id } = action.payload;
+          return{
+            ...state,
+              sheetMusic: [ ...state.sheetMusic.slice(0, id) , ...state.sheetMusic(id + 1) ]
+          }
       }
       default:
       return state;

@@ -8,7 +8,7 @@ const SheetMusicQueryPanel = ( {sheetMusic} ) => {
     return(
         <div className="sheetMusicQueryPanel"> 
             {
-               sheetMusic ? sheetMusic.map( s => <SheetMusicWidget index={s.index} title={s.title} key={s.index}/> ) 
+               sheetMusic ? sheetMusic.map( s => <SheetMusicWidget id={s.id} title={s.title} key={s.id} /> ) 
                           : "Nothing here to see"
             }
         </div>
